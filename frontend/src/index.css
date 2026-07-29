@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/40;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Page transitions / custom animations */
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+}
